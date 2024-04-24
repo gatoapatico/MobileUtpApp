@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="53dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/Icon_User" />
+
+    <TextView
+        android:id="@+id/txt_tittle_supply"
+        android:layout_width="132dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="92dp"
+        android:text="INGRESO INSUMOS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="189dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#0028E8"
+        android:hint="Insumo"
+        android:text="Ceb"
+        android:textColorHint="#0C2CDA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tittle_supply" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="72dp"
+
+        android:layout_marginTop="64dp"
+        android:backgroundTint="#0008B5"
+        android:ems="10"
+        android:inputType="number"
+        android:text="S/. 10"
+        android:textColorHint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextNumber3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="88dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="#0027FF"
+
+        android:ems="10"
+        android:inputType="number"
+        android:text="S/. 10"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumber2"
+        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="12dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/mayor_menor"
+        android:backgroundTint="@color/black"
+        android:rotation="90"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber2"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber2"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="12dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/mayor_menor"
+        android:backgroundTint="@color/black"
+        android:rotation="90"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber3"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumber3"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="12dp"
+        android:layout_height="14dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/mayor_menor"
+        android:rotation="270"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber2"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber2"
+        tools:ignore="DuplicateIds,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="12dp"
+        android:layout_height="14dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/mayor_menor"
+        android:rotation="270"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumber3"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber3"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="161dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="168dp"
+        android:text="Agregar"
+        app:cornerRadius="10px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
+        tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/icone_x"
+        app:layout_constraintEnd_toEndOf="@+id/autoCompleteTextView"
+        app:layout_constraintTop_toTopOf="@+id/autoCompleteTextView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="288dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="244dp"
+        android:background="#C1C1C1"
+        android:text="Col                    3und               S/10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="288dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="28dp"
+        android:background="#C1C1C1"
+        android:text="Fideos               4 Pack          S/10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="288dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="28dp"
+        android:background="#C1C1C1"
+        android:text="Lechuga             3und           S/10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="76dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="4dp"
+        android:text="Eliminar"
+        android:textSize="18px"
+        app:cornerRadius="10px"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        app:layout_marginBaseline="10px"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="76dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="4dp"
+        android:text="Eliminar"
+        android:textSize="18px"
+        app:cornerRadius="10px"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        app:layout_marginBaseline="10px"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="76dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="4dp"
+        android:text="Eliminar"
+        android:textSize="18px"
+        app:cornerRadius="10px"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView6"
+        app:layout_marginBaseline="10px"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
