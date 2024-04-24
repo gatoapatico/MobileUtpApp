@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="appTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="AppTheme.ButtonIconWelcome" parent="Widget.AppCompat.Button">
+        <!-- <item name="android:background">@null</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:gravity">center_horizontal|top</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FF000000</item>-->
+    </style>
+</resources>
