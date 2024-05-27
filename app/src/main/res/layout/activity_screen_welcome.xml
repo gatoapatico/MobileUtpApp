@@ -64,11 +64,11 @@
         android:text="Ingresar Insumos"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button9"
+        app:layout_constraintStart_toEndOf="@+id/btn_ordenar_insumo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btn_ordenar_insumo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="76dp"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btn_carta"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
@@ -91,11 +91,11 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toEndOf="@+id/button11"
+        app:layout_constraintStart_toEndOf="@+id/btn_reporte"
         app:layout_constraintTop_toBottomOf="@+id/btn_ingresar_insumo" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btn_reporte"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="76dp"
@@ -105,10 +105,10 @@
         android:text="Reporte"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_ordenar_insumo" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/btn_detalle_ingreso"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="76dp"
@@ -118,10 +118,10 @@
         android:text="Detalle de Ingreso"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_reporte" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/btn_almacen"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
@@ -130,7 +130,7 @@
         android:text="Almacén"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button12"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintStart_toEndOf="@+id/btn_detalle_ingreso"
+        app:layout_constraintTop_toBottomOf="@+id/btn_carta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
