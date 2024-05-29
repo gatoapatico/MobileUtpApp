@@ -1,6 +1,8 @@
 package com.example.mobileutpapp.view;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
     private Button btnLogin;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         btnLogin = findViewById(R.id.btn_login);
+        sharedPreferences = getSharedPreferences("UserSession", Context.MODE_PRIVATE);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,9 +44,14 @@ public class MainActivity extends AppCompatActivity {
                 if (InputValidator.isValid(username, password)) {
                     boolean isValid = userController.loginUser(username, password);
                     if (isValid) {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("USERNAME", username);
+                        editor.apply();
+
                         Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                        // Aquí puedes iniciar una nueva actividad o hacer lo que necesites después del login exitoso
-                        Intent intent = new Intent(MainActivity.this, AddUserActivity.class);
+
+                        Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+                        intent.putExtra("username", username);
                         startActivity(intent);
                     } else {
                         Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
@@ -72,67 +81,67 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupLayout2Listener() {
-        Button btnOrdenarInsumo = findViewById(R.id.btn_ordenar_insumo);
-        Button btnIngresarInsumo = findViewById(R.id.btn_ingresar_insumo);
-        Button btnReporte = findViewById(R.id.btn_reporte);
-        Button btnCarta = findViewById(R.id.btn_carta);
-        Button btnDetalleIngreso = findViewById(R.id.btn_detalle_ingreso);
-        Button btnAlmacen = findViewById(R.id.btn_almacen);
+//    private void setupLayout2Listener() {
+//        Button btnOrdenarInsumo = findViewById(R.id.btn_ordenar_insumo);
+//        Button btnIngresarInsumo = findViewById(R.id.btn_ingresar_insumo);
+//        Button btnReporte = findViewById(R.id.btn_reporte);
+//        Button btnCarta = findViewById(R.id.btn_carta);
+//        Button btnDetalleIngreso = findViewById(R.id.btn_detalle_ingreso);
+//        Button btnAlmacen = findViewById(R.id.btn_almacen);
 
-        btnOrdenarInsumo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.ordenar_insumo);
-                setupLayout3Listener();
-            }
-        });
-        btnIngresarInsumo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.add_supply);
-                setupLayout3Listener();
-            }
-        });
-        btnReporte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.reportes);
-                setupLayout3Listener();
-            }
-        });
-        btnCarta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.carta);
-                setupLayout3Listener();
-            }
-        });
-        btnDetalleIngreso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.detalle_ingreso);
-                setupLayout3Listener();
-            }
-        });
-        btnAlmacen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.almacen);
-                setupLayout3Listener();
-            }
-        });
+//        btnOrdenarInsumo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.ordenar_insumo);
+//                setupLayout3Listener();
+//            }
+//        });
+//        btnIngresarInsumo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.add_supply);
+//                setupLayout3Listener();
+//            }
+//        });
+//        btnReporte.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.reportes);
+//                setupLayout3Listener();
+//            }
+//        });
+//        btnCarta.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.carta);
+//                setupLayout3Listener();
+//            }
+//        });
+//        btnDetalleIngreso.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.detalle_ingreso);
+//                setupLayout3Listener();
+//            }
+//        });
+//        btnAlmacen.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.almacen);
+//                setupLayout3Listener();
+//            }
+//        });
+//
+//    }
 
-    }
-
-    private void setupLayout3Listener() {
-        Button btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_screen_welcome);
-                setupLayout2Listener();
-            }
-        });
-    }
+//    private void setupLayout3Listener() {
+//        Button btnBack = findViewById(R.id.btn_back);
+//        btnBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setContentView(R.layout.activity_screen_welcome);
+//                setupLayout2Listener();
+//            }
+//        });
+//    }
 }

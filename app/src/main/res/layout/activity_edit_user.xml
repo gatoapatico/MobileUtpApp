@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etEditUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etEditPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnSaveChanges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_background_1"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:textColor="@color/white"
+        android:text="Actualizar Usuario" />
+
+    <Button
+        android:id="@+id/btnDeleteUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Delete User"
+        android:textColor="@color/white" />
+</LinearLayout>
