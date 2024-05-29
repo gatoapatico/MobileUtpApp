@@ -6,6 +6,7 @@
     <color name="primaryDark">#303F9F</color>
     <color name="accent">#4CAF50</color>
     <color name="backgroundBTN">#F9F8F8</color>
-    <color name="gray_1">#D5D5D5</color>
+    <color name="gray_1">#B6B6B6</color>
+
 
 </resources>

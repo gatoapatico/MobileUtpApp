@@ -83,4 +83,31 @@ public class UserModel {
         }
         return users;
     }
+
+    public void updateUser(User user) {
+        SQLiteDatabase db = null;
+        try {
+            db = dbHelper.openWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_USERNAME, user.getUsername());
+            values.put(COLUMN_PASSWORD, user.getPassword());
+            db.update(TABLE_USERS, values, COLUMN_ID + " = ?", new String[]{String.valueOf(user.getId())});
+        } finally {
+            if (db != null) {
+                db.close();
+            }
+        }
+    }
+
+    public void deleteUser(int id) {
+        SQLiteDatabase db = null;
+        try {
+            db = dbHelper.openWritableDatabase();
+            db.delete(TABLE_USERS, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
+        } finally {
+            if (db != null) {
+                db.close();
+            }
+        }
+    }
 }

@@ -21,15 +21,13 @@
         android:id="@+id/txtalm_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola, usuario!"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="88dp"
+        android:text="Gestión de Almacén"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -46,62 +44,48 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Qué deseas hacer hoy?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:alpha="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/menu" />
+        android:layout_marginTop="20dp"
+        android:text="¿Deseas revisar Insumos o Productos?"
+        app:layout_constraintTop_toBottomOf="@+id/txtalm_titulo"
+        tools:layout_editor_absoluteX="43dp" />
 
     <Button
-        android:id="@+id/btn_almacen"
-        android:layout_width="273dp"
-        android:layout_height="80dp"
+        android:id="@+id/btn_insumos"
+        android:layout_width="113dp"
+        android:layout_height="91dp"
         android:layout_marginTop="244dp"
         android:background="@drawable/btn_background_1"
         android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="Gestión de Almacén de Productos"
+        android:text="INSUMOS"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_pedidos"
-        android:layout_width="273dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/btn_gray_1"
+        android:id="@+id/btn_productos"
+        android:layout_width="113dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/btn_background_1"
         android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="Gestión de Pedidos"
+        android:text="PRODUCTOS"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_almacen" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_insumos" />
 
     <Button
-        android:id="@+id/btn_reportes"
-        android:layout_width="273dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/btn_gray_1"
+        android:id="@+id/btn_inicio"
+        android:layout_width="97dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_background_1"
         android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="Gestión de Reportes"
+        android:text="INICIO"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_pedidos" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,4 +26,13 @@ public class UserController {
     public List<User> getAllUsers() {
         return userModel.getAllUsers();
     }
+
+    public void updateUser(int id, String username, String password) {
+        User user = new User(id, username, password);
+        userModel.updateUser(user);
+    }
+
+    public void deleteUser(int id) {
+        userModel.deleteUser(id);
+    }
 }

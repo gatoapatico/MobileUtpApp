@@ -21,8 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.WelcomeActivity"></activity>
+        <activity android:name=".view.AlmacenActivity"></activity>
         <activity android:name=".view.AddUserActivity"></activity>
         <activity android:name=".view.UserListActivity"></activity>
+        <activity android:name=".view.EditUserActivity"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
