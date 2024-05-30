@@ -23,6 +23,10 @@ public class UserController {
         userModel.addUser(user);
     }
 
+    public User getUserById(int userId) {
+        return userModel.getUserById(userId);
+    }
+
     public List<User> getAllUsers() {
         return userModel.getAllUsers();
     }

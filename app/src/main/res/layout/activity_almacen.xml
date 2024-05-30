@@ -49,31 +49,32 @@
         app:layout_constraintTop_toBottomOf="@+id/txtalm_titulo"
         tools:layout_editor_absoluteX="43dp" />
 
-    <Button
-        android:id="@+id/btn_insumos"
-        android:layout_width="113dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="244dp"
-        android:background="@drawable/btn_background_1"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="INSUMOS"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_insumos"-->
+<!--        android:layout_width="113dp"-->
+<!--        android:layout_height="91dp"-->
+<!--        android:layout_marginTop="244dp"-->
+<!--        android:background="@drawable/btn_background_1"-->
+<!--        android:fontFamily="@font/baloo_bhai_2_semibold"-->
+<!--        android:text="INSUMOS"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
         android:id="@+id/btn_productos"
         android:layout_width="113dp"
         android:layout_height="91dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="276dp"
         android:background="@drawable/btn_background_1"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="PRODUCTOS"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_insumos" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_inicio"

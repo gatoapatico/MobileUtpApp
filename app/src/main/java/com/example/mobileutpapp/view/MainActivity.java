@@ -3,6 +3,7 @@ package com.example.mobileutpapp.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-                        intent.putExtra("username", username);
                         startActivity(intent);
                     } else {
                         Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
