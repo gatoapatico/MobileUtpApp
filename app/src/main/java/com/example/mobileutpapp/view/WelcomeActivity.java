@@ -30,9 +30,6 @@ public class WelcomeActivity extends AppCompatActivity {
         tvUsername = findViewById(R.id.txtalm_titulo);
         btn_almacen = findViewById(R.id.btn_almacen);
 
-//        Intent intent = getIntent();
-//        String username = intent.getStringExtra("username");
-
         tvUsername.setText("Hola, " + username + "!");
 
         btn_almacen.setOnClickListener(new View.OnClickListener() {

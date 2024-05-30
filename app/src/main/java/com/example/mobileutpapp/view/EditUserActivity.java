@@ -25,8 +25,8 @@ public class EditUserActivity extends AppCompatActivity {
 
         etEditUsername = findViewById(R.id.etEditUsername);
         etEditPassword = findViewById(R.id.etEditPassword);
-        btnSaveChanges = findViewById(R.id.btnSaveChanges);
-        btnDeleteUser = findViewById(R.id.btnDeleteUser);
+        btnSaveChanges = findViewById(R.id.btnActualizarUsuario);
+        btnDeleteUser = findViewById(R.id.btnEliminarUsuario);
         userController = new UserController(this);
 
         Intent intent = getIntent();

@@ -26,6 +26,10 @@
         <activity android:name=".view.AddUserActivity"></activity>
         <activity android:name=".view.UserListActivity"></activity>
         <activity android:name=".view.EditUserActivity"></activity>
+        <activity android:name=".view.PlatosActivity"></activity>
+        <activity android:name=".view.PlatosInfoActivity"></activity>
+        <activity android:name=".view.PlatoAddActivity"></activity>
+        <activity android:name=".view.PlatoEditActivity"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

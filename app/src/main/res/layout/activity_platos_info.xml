@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="378dp"
+        android:layout_height="324dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="20dp"
+        android:alpha="0.06"
+        android:scaleType="centerCrop"
+        android:src="@drawable/plato_vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_platosinfo_platos"
+        android:layout_width="97dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_background_1"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="PLATOS"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNombrePlato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/baloo"
+        android:hint="Nombre de Plato"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_platosinfo_platos" />
+
+    <TextView
+        android:id="@+id/tvPrecioTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/baloo"
+        android:text="Precio: S/"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombrePlato" />
+
+    <TextView
+        android:id="@+id/tvPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/baloo"
+        android:hint="00.00"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/tvPrecioTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombrePlato" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="232dp"
+        android:layout_height="185dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrecioTitle" />
+
+    <Button
+        android:id="@+id/btn_platosinfo_editar"
+        android:layout_width="202dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_background_1"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="EDITAR PLATO"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
