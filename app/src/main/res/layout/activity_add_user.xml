@@ -3,8 +3,94 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#7391FE">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="REGISTRO"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156" />
+
+    <ImageView
+        android:id="@+id/bg_circle_1"
+        android:layout_width="650dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="168dp"
+        android:alpha="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_background_black" />
+
+    <ImageView
+        android:id="@+id/bg_circle_2"
+        android:layout_width="450dp"
+        android:layout_height="450dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="332dp"
+        android:alpha="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_background_black" />
+
+    <ImageView
+        android:id="@+id/bg_circle_3"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginBottom="612dp"
+        android:alpha="0.2"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/circle_background" />
+
+    <ImageView
+        android:id="@+id/bg_circle_4"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="232dp"
+        android:alpha="0.2"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_background" />
+
+    <ImageView
+        android:id="@+id/bg_circle_5"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginEnd="188dp"
+        android:alpha="0.2"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_background" />
+
+    <ImageView
+        android:id="@+id/bg_circle_6"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="612dp"
+        android:layout_marginEnd="188dp"
+        android:alpha="0.2"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_background" />
 
     <EditText
         android:id="@+id/etNewUsername"
@@ -13,7 +99,12 @@
         android:layout_marginTop="160dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Nombre"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:backgroundTint="#80FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,8 +115,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:backgroundTint="#80FFFFFF"
         android:ems="10"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,15 +130,15 @@
 
     <Button
         android:id="@+id/btnAddUser"
-        android:layout_width="203dp"
-        android:layout_height="45dp"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
         android:layout_marginTop="84dp"
         android:background="@drawable/btn_background_1"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="AGREGAR NUEVO USUARIO"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.480"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNewPassword" />
 
@@ -49,7 +146,7 @@
         android:id="@+id/btnViewUsers"
         android:layout_width="237dp"
         android:layout_height="58dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/btn_background_1"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="Ver Usuarios"

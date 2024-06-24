@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_inicio"
+            android:title="Inicio"/>
+
+        <item
+            android:id="@+id/nav_carta"
+            android:title="Carta"/>
+
+        <item
+            android:id="@+id/nav_ordInsumos"
+            android:title="Ordenar Insumos"/>
+
+        <item
+            android:id="@+id/nav_ingInsumos"
+            android:title="Ingresar Insumos"/>
+        <item
+            android:id="@+id/nav_detInsumos"
+            android:title="Detalles Insumos"/>
+        <item
+            android:id="@+id/nav_almacen"
+            android:title="Almacen"/>
+        <item
+            android:id="@+id/nav_reporte"
+            android:title="Reporte"/>
+    </group>
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:title="Salir"/>
+        </menu>
+
+    </item>
+
+</menu>
