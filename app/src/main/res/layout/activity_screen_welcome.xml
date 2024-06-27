@@ -80,11 +80,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_pedidos"
+        android:id="@+id/btn_reportes"
+        android:layout_width="273dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/btn_gray_1"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="Gestión de Reportes"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pedido"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_pedido"
         android:layout_width="273dp"
         android:layout_height="80dp"
         android:layout_marginTop="72dp"
-        android:background="@drawable/btn_gray_1"
+        android:background="@drawable/btn_background_1"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="Gestión de Pedidos"
         android:textColor="@color/white"
@@ -92,45 +107,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_almacen" />
 
-    <Button
-        android:id="@+id/btn_reportes"
-        android:layout_width="273dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="72dp"
-        android:background="@drawable/btn_gray_1"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="Gestión de Reportes"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_pedidos" />
+    <!-- <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
+         <androidx.appcompat.widget.Toolbar
+             android:layout_width="match_parent"
+             android:layout_height="56dp"
+             android:id="@+id/toolbar"
+             android:elevation="4dp"
+             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:id="@+id/fragment_container"/>
+     </LinearLayout>
 
-   <!-- <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:id="@+id/toolbar"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragment_container"/>
-    </LinearLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_view"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu"
-        app:itemIconTint="@color/gray_1"
-        app:itemTextColor="@color/gray_1"
-        tools:ignore="MissingConstraints" />-->
+     <com.google.android.material.navigation.NavigationView
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent"
+         android:id="@+id/nav_view"
+         android:layout_gravity="start"
+         app:headerLayout="@layout/nav_header"
+         app:menu="@menu/nav_menu"
+         app:itemIconTint="@color/gray_1"
+         app:itemTextColor="@color/gray_1"
+         tools:ignore="MissingConstraints" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

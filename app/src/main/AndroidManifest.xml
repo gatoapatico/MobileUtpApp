@@ -13,6 +13,14 @@
         android:theme="@style/Theme.MobileUtpApp"
         tools:targetApi="31">
         <activity
+            android:name=".view.PedidosMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainPedidosTest"
+            android:exported="false"
+            android:label="@string/title_activity_main_pedidos_test"
+            android:theme="@style/Theme.MobileUtpApp" />
+        <activity
             android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -21,15 +29,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.WelcomeActivity"></activity>
-        <activity android:name=".view.AlmacenActivity"></activity>
-        <activity android:name=".view.AddUserActivity"></activity>
-        <activity android:name=".view.UserListActivity"></activity>
-        <activity android:name=".view.EditUserActivity"></activity>
-        <activity android:name=".view.PlatosActivity"></activity>
-        <activity android:name=".view.PlatosInfoActivity"></activity>
-        <activity android:name=".view.PlatoAddActivity"></activity>
-        <activity android:name=".view.PlatoEditActivity"></activity>
+        <activity android:name=".view.WelcomeActivity" />
+        <activity android:name=".view.AlmacenActivity" />
+        <activity android:name=".view.AddUserActivity" />
+        <activity android:name=".view.UserListActivity" />
+        <activity android:name=".view.EditUserActivity" />
+        <activity android:name=".view.PlatosActivity" />
+        <activity android:name=".view.PlatosInfoActivity" />
+        <activity android:name=".view.PlatoAddActivity" />
+        <activity android:name=".view.PlatoEditActivity" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
