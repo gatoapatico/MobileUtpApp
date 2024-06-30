@@ -12,9 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileutpapp.R;
 import com.example.mobileutpapp.controller.PlatoController;
-import com.example.mobileutpapp.controller.UserController;
 import com.example.mobileutpapp.entity.Plato;
-import com.example.mobileutpapp.entity.User;
 
 import java.util.List;
 

@@ -12,25 +12,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import com.example.mobileutpapp.R;
 import com.google.android.material.navigation.NavigationView;
 
-public class AlmacenActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
-    private AppCompatImageButton btn_menu;
-    //    private Button btn_insumos;
-    private Button btn_productos;
+public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    private Button btnCarta;
     private DrawerLayout drawerLayout;
+    private AppCompatImageButton btn_menu;
     @SuppressLint("WrongViewCast")
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_almacen);
+        setContentView(R.layout.menu_activity);
 
+        btnCarta = findViewById(R.id.btnCarta);
         btn_menu = findViewById(R.id.bottomNavigationView);
-//      btn_insumos = findViewById(R.id.btn_almacen);
-        btn_productos = findViewById(R.id.btn_productos);
+        btnCarta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, CartaActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,13 +43,6 @@ public class AlmacenActivity extends AppCompatActivity implements NavigationView
             }
         });
 
-        btn_productos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AlmacenActivity.this, PlatosActivity.class);
-                startActivity(intent);
-            }
-        });
         drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -54,31 +51,31 @@ public class AlmacenActivity extends AppCompatActivity implements NavigationView
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_inicio:
-                Intent intentInicio = new Intent(AlmacenActivity.this, WelcomeActivity.class);
+                Intent intentInicio = new Intent(MenuActivity.this, WelcomeActivity.class);
                 startActivity(intentInicio);
                 break;
             case R.id.nav_menu:
-                Intent intentMenu = new Intent(AlmacenActivity.this, MenuActivity.class);
-                startActivity(intentMenu);
+                Toast.makeText(this, "Ya estás en la pantalla de Menu", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_ingInsumos:
-                Intent intentAddSuply = new Intent(AlmacenActivity.this, AddSupplyActivity.class);
+                Intent intentAddSuply = new Intent(MenuActivity.this, AddSupplyActivity.class);
                 startActivity(intentAddSuply);
                 break;
             case R.id.nav_detInsumos:
-                Intent intentDetalleIng = new Intent(AlmacenActivity.this, DetalleIngresoInsumosActivity.class);
+                Intent intentDetalleIng = new Intent(MenuActivity.this, DetalleIngresoInsumosActivity.class);
                 startActivity(intentDetalleIng);
                 break;
             case R.id.nav_almacen:
-                Toast.makeText(this, "Ya estás en la pantalla de Almacen", Toast.LENGTH_SHORT).show();
+                Intent intentAlmacen = new Intent(MenuActivity.this, AlmacenActivity.class);
+                startActivity(intentAlmacen);
                 break;
             case R.id.nav_reporte:
-                Intent intentReporte = new Intent(AlmacenActivity.this, ReporteActivity.class);
+                Intent intentReporte = new Intent(MenuActivity.this, ReporteActivity.class);
                 startActivity(intentReporte);
                 break;
             case R.id.nav_logout:
                 Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
-                Intent logout = new Intent(AlmacenActivity.this, MainActivity.class);
+                Intent logout = new Intent(MenuActivity.this, MainActivity.class);
                 startActivity(logout);
                 break;
         }

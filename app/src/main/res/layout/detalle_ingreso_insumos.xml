@@ -8,7 +8,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
-    tools:context=".view.ReporteActivity">
+    tools:context=".view.DetalleIngresoInsumosActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,19 +25,20 @@
             app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/menu" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="122dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="100dp"
-        android:fontFamily="@font/baloo"
-        android:text="REPORTES"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="279dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/baloo"
+            android:text="DETALLE DE INGRESO DE INSUMOS"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
