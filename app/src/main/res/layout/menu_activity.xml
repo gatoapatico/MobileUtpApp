@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7391FE">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:text="Menu Principal"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155" />
+
+    <ImageView
+        android:id="@+id/bg_circle_1"
+        android:layout_width="1032dp"
+        android:layout_height="774dp"
+        android:layout_marginTop="84dp"
+        android:alpha="0.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_background_black" />
+
+    <ImageView
+        android:id="@+id/bg_circle_4"
+        android:layout_width="659dp"
+        android:layout_height="653dp"
+        android:layout_marginTop="220dp"
+        android:alpha="0.2"
+        android:background="#00FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_background_blue"
+        tools:layout_editor_absoluteX="-182dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/btnCarta"
+        android:layout_width="134dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/button_with_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnOtro"
+        android:layout_width="138dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/button_background_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCarta"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="23dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.8"
+        android:background="@drawable/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
