@@ -1,41 +1,29 @@
 package com.example.mobileutpapp.view;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import com.example.mobileutpapp.R;
 import com.google.android.material.navigation.NavigationView;
 
-public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-    private Button btnCarta;
+public class ReporteActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
     private DrawerLayout drawerLayout;
     private AppCompatImageButton btn_menu;
     @SuppressLint("WrongViewCast")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_activity);
-
-        btnCarta = findViewById(R.id.btnCarta);
+        setContentView(R.layout.reportes);
         btn_menu = findViewById(R.id.bottomNavigationView);
-        btnCarta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, CartaActivity.class);
-                startActivity(intent);
-            }
-        });
-
         btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,38 +39,37 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_inicio:
-                Intent intentInicio = new Intent(MenuActivity.this, WelcomeActivity.class);
+                Intent intentInicio = new Intent(ReporteActivity.this, WelcomeActivity.class);
                 startActivity(intentInicio);
                 break;
             case R.id.nav_menu:
-                Toast.makeText(this, "Ya estás en la pantalla de Menu", Toast.LENGTH_SHORT).show();
+                Intent intentMenu = new Intent(ReporteActivity.this, MenuActivity.class);
+                startActivity(intentMenu);
                 break;
             case R.id.nav_ingInsumos:
-                Intent intentAddSuply = new Intent(MenuActivity.this, AddSupplyActivity.class);
+                Intent intentAddSuply = new Intent(ReporteActivity.this, AddSupplyActivity.class);
                 startActivity(intentAddSuply);
                 break;
             case R.id.nav_detInsumos:
-                Intent intentDetalleIng = new Intent(MenuActivity.this, DetalleIngresoInsumosActivity.class);
+                Intent intentDetalleIng = new Intent(ReporteActivity.this, DetalleIngresoInsumosActivity.class);
                 startActivity(intentDetalleIng);
                 break;
             case R.id.nav_almacen:
-                Intent intentAlmacen = new Intent(MenuActivity.this, AlmacenActivity.class);
+                Intent intentAlmacen = new Intent(ReporteActivity.this, AlmacenActivity.class);
                 startActivity(intentAlmacen);
                 break;
             case R.id.nav_reporte:
-                Intent intentReporte = new Intent(MenuActivity.this, ReporteActivity.class);
-                startActivity(intentReporte);
+                Toast.makeText(this, "Ya estás en la pantalla de Reportes", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_logout:
                 Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
-                Intent logout = new Intent(MenuActivity.this, MainActivity.class);
+                Intent logout = new Intent(ReporteActivity.this, MainActivity.class);
                 startActivity(logout);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

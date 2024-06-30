@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.WelcomeActivity"></activity>
-        <activity android:name=".view.AlmacenFragment"></activity>
+        <activity android:name=".view.AlmacenActivity"></activity>
         <activity android:name=".view.AddUserActivity"></activity>
         <activity android:name=".view.UserListActivity"></activity>
         <activity android:name=".view.EditUserActivity"></activity>
@@ -30,10 +30,10 @@
         <activity android:name=".view.PlatosInfoActivity"></activity>
         <activity android:name=".view.PlatoAddActivity"></activity>
         <activity android:name=".view.PlatoEditActivity"></activity>
-        <activity android:name=".view.CartaFragment"></activity>
-        <activity android:name=".view.AddSupplyFragment"></activity>
-        <activity android:name=".view.DetalleIngresoInsumosFragment"></activity>
-        <activity android:name=".view.ReporteFragment"></activity>
+        <activity android:name=".view.CartaActivity"></activity>
+        <activity android:name=".view.AddSupplyActivity"></activity>
+        <activity android:name=".view.DetalleIngresoInsumosActivity"></activity>
+        <activity android:name=".view.ReporteActivity"></activity>
         <activity android:name=".view.MenuActivity"></activity>
 
         <meta-data

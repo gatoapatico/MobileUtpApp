@@ -61,7 +61,7 @@ public class PlatosActivity extends AppCompatActivity {
         btn_almacen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlatosActivity.this, AlmacenFragment.class);
+                Intent intent = new Intent(PlatosActivity.this, AlmacenActivity.class);
                 startActivity(intent);
             }
         });

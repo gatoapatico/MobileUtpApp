@@ -47,7 +47,8 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
         btn_almacen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment (new AlmacenFragment());
+                Intent intent = new Intent(WelcomeActivity.this, AlmacenActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -62,9 +63,6 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new WelcomeFragment()).commit();
-        }
     }
 
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -72,46 +70,34 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
             case R.id.nav_inicio:
                 Toast.makeText(this, "Ya estás en la pantalla de inicio", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.nav_carta:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new CartaFragment())
-                        .commit();
+            case R.id.nav_menu:
+                Intent intentMenu = new Intent(WelcomeActivity.this, MenuActivity.class);
+                startActivity(intentMenu);
                 break;
-            //case R.id.nav_ordInsumos:
-            //  getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ShareFragment()).commit();
-            //break;
             case R.id.nav_ingInsumos:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new AddSupplyFragment())
-                        .commit();
+                Intent intentAddSuply = new Intent(WelcomeActivity.this, AddSupplyActivity.class);
+                startActivity(intentAddSuply);
                 break;
             case R.id.nav_detInsumos:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new DetalleIngresoInsumosFragment())
-                        .commit();
+                Intent intentDetalleIng = new Intent(WelcomeActivity.this, DetalleIngresoInsumosActivity.class);
+                startActivity(intentDetalleIng);
                 break;
             case R.id.nav_almacen:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new AlmacenFragment())
-                        .commit();
+                Intent intentAlmacen = new Intent(WelcomeActivity.this, AlmacenActivity.class);
+                startActivity(intentAlmacen);
                 break;
             case R.id.nav_reporte:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new ReporteFragment())
-                        .commit();
+                Intent intentReporte = new Intent(WelcomeActivity.this, ReporteActivity.class);
+                startActivity(intentReporte);
                 break;
             case R.id.nav_logout:
                 Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
+                Intent logout = new Intent(WelcomeActivity.this, MainActivity.class);
+                startActivity(logout);
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private void replaceFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .commit();
     }
 
     @Override
