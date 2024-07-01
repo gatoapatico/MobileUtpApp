@@ -13,28 +13,38 @@
         android:theme="@style/Theme.MobileUtpApp"
         tools:targetApi="31">
         <activity
+            android:name=".view.VerPedidos"
+            android:exported="false" />
+        <activity
+            android:name=".view.CrearPedido"
+            android:exported="false" />
+        <activity
+            android:name=".view.gestionPedidos"
+            android:exported="false" />
+        <activity
             android:name=".view.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.WelcomeActivity"></activity>
-        <activity android:name=".view.AlmacenActivity"></activity>
-        <activity android:name=".view.AddUserActivity"></activity>
-        <activity android:name=".view.UserListActivity"></activity>
-        <activity android:name=".view.EditUserActivity"></activity>
-        <activity android:name=".view.PlatosActivity"></activity>
-        <activity android:name=".view.PlatosInfoActivity"></activity>
-        <activity android:name=".view.PlatoAddActivity"></activity>
-        <activity android:name=".view.PlatoEditActivity"></activity>
-        <activity android:name=".view.CartaActivity"></activity>
-        <activity android:name=".view.AddSupplyActivity"></activity>
-        <activity android:name=".view.DetalleIngresoInsumosActivity"></activity>
-        <activity android:name=".view.ReporteActivity"></activity>
-        <activity android:name=".view.MenuActivity"></activity>
+        <activity android:name=".view.WelcomeActivity" />
+        <activity android:name=".view.AlmacenActivity" />
+        <activity android:name=".view.AddUserActivity" />
+        <activity android:name=".view.UserListActivity" />
+        <activity android:name=".view.EditUserActivity" />
+        <activity android:name=".view.PlatosActivity" />
+        <activity android:name=".view.PlatosInfoActivity" />
+        <activity android:name=".view.PlatoAddActivity" />
+        <activity android:name=".view.PlatoEditActivity" />
+        <activity android:name=".view.CartaActivity" />
+        <activity android:name=".view.AddSupplyActivity" />
+        <activity android:name=".view.DetalleIngresoInsumosActivity" />
+        <activity android:name=".view.ReporteActivity" />
+        <activity android:name=".view.MenuActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
