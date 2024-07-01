@@ -16,7 +16,6 @@ import com.example.mobileutpapp.R;
 public class gestionPedidos extends AppCompatActivity {
 
     Button Crearpedidos, Verpedidos;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
