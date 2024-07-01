@@ -29,11 +29,25 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
     private DrawerLayout drawerLayout;
     private AppCompatImageButton btn_menu;
 
+    //variable que nos permitirá direccionar a gestión pedidos
+    Button pedidos;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_welcome);
+
+
+        //Al hacer clic nos llevará a gestión de pedidos
+        pedidos =(Button)findViewById(R.id.btn_pedidos);
+        pedidos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( WelcomeActivity.this, gestionPedidos.class);
+                startActivity(intent);
+            }
+        });
+        //fin codigo de gestión de pedidos
 
         sharedPreferences = getSharedPreferences("UserSession", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("USERNAME", "Guest");
@@ -51,6 +65,8 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
                 startActivity(intent);
             }
         });
+
+
 
         btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
