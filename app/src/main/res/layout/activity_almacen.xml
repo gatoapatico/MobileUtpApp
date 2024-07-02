@@ -55,20 +55,8 @@
             android:layout_marginTop="20dp"
             android:text="¿Deseas revisar Insumos o Productos?"
             app:layout_constraintTop_toBottomOf="@+id/txtalm_titulo"
-            tools:layout_editor_absoluteX="43dp" />
-
-    <!--    <Button-->
-    <!--        android:id="@+id/btn_insumos"-->
-    <!--        android:layout_width="113dp"-->
-    <!--        android:layout_height="91dp"-->
-    <!--        android:layout_marginTop="244dp"-->
-    <!--        android:background="@drawable/btn_background_1"-->
-    <!--        android:fontFamily="@font/baloo_bhai_2_semibold"-->
-    <!--        android:text="INSUMOS"-->
-    <!--        android:textColor="@color/white"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+            tools:layout_editor_absoluteX="43dp"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/btn_productos"
