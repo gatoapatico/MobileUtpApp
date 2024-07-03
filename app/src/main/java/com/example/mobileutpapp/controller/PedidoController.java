@@ -35,7 +35,7 @@ public class PedidoController {
         values.put(COLUMN_PEDIDO_CANTIDAD, pedido.getCantidad());
         values.put(COLUMN_PEDIDO_COSTO_TOTAL, pedido.getCostoTotal());
         values.put(COLUMN_PEDIDO_MESA, pedido.getMesa());
-        values.put(COLUMN_PEDIDO_FECHA, pedido.getFecha());  // Agregar la fecha al ContentValues
+        values.put(COLUMN_PEDIDO_FECHA, pedido.getFecha());
         db.insert(TABLE_PEDIDOS, null, values);
         db.close();
     }
