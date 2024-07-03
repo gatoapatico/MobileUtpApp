@@ -25,13 +25,10 @@ public class PedidoModel {
 
     public PedidoModel(Context context) {
         dbHelper = new DatabaseHelper(context);
-        // Forzar la creación de la base de datos
-        SQLiteDatabase db = dbHelper.openWritableDatabase();
-        db.close();
     }
 
     public void addPedido(Pedido pedido) {
-        SQLiteDatabase db = dbHelper.openWritableDatabase();
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_PEDIDO_ID_PRODUCTO, pedido.getIdProducto());
         values.put(COLUMN_PEDIDO_PRECIO, pedido.getPrecio());
@@ -43,5 +40,10 @@ public class PedidoModel {
         db.close();
     }
 
-    // Métodos adicionales según necesidades (getPedidoById, getAllPedidos, updatePedido, deletePedido)
+    public void deletePedido(int pedidoId) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(TABLE_PEDIDOS, COLUMN_PEDIDO_ID + " = ?", new String[]{String.valueOf(pedidoId)});
+        db.close();
+    }
+
 }
