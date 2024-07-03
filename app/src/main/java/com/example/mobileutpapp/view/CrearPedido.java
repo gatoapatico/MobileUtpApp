@@ -1,5 +1,6 @@
 package com.example.mobileutpapp.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -83,6 +84,8 @@ public class CrearPedido extends AppCompatActivity {
             public void onClick(View v) {
                 // Aquí se implementará la lógica para guardar la información en la base de datos
                 guardarPedido();
+                Intent intent = new Intent(CrearPedido.this, gestionPedidos.class);
+                startActivity(intent);
             }
         });
     }
