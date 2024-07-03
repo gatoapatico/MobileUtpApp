@@ -7,9 +7,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobileutpapp.R;
+import com.example.mobileutpapp.controller.PedidoController;
 import com.example.mobileutpapp.controller.PlatoController;
+import com.example.mobileutpapp.entity.Pedido;
 import com.example.mobileutpapp.entity.Plato;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,21 +93,24 @@ public class CrearPedido extends AppCompatActivity {
         List<Plato> platos = platoController.getAllPlatos();
         Plato selectedPlato = platos.get(position);
 
-        String cantidad = editTextCantidad.getText().toString();
-        String mesa = spinnerMesas.getSelectedItem().toString();
+        String cantidadStr = editTextCantidad.getText().toString();
+        int cantidad = cantidadStr.isEmpty() ? 0 : Integer.parseInt(cantidadStr);
+        String mesaStr = spinnerMesas.getSelectedItem().toString();
+        int mesa = Integer.parseInt(mesaStr);
 
-        // Aquí implementa la lógica para guardar en la base de datos
-        // Por ejemplo, puedes usar el controlador de pedidos o realizar una llamada a un servicio
+        // Calcular el costo total
+        double costoTotal = selectedPlato.getPrecio() * cantidad;
 
-        // Ejemplo de impresión de datos (sustituir por lógica de BD)
-        String mensaje = "Pedido guardado:\nPlato: " + selectedPlato.getNombre() +
-                "\nPrecio: " + selectedPlato.getPrecio() +
-                "\nCantidad: " + cantidad +
-                "\nMesa: " + mesa;
+        // Crear instancia de Pedido
+        Pedido pedido = new Pedido(0, selectedPlato.getId(), selectedPlato.getPrecio(), cantidad, costoTotal, mesa);
 
-        // Mostrar mensaje (sustituir por lógica de tu aplicación)
-        // Por ejemplo, guardar en la base de datos y mostrar un mensaje de éxito
-        // Toast.makeText(this, "Pedido guardado correctamente", Toast.LENGTH_SHORT).show();
-        System.out.println(mensaje);
+        // Guardar el Pedido utilizando el controlador de Pedidos
+        PedidoController pedidoController = new PedidoController(this);
+        pedidoController.addPedido(pedido);
+
+        // Mostrar mensaje de éxito al usuario
+        Toast.makeText(this, "Pedido guardado correctamente", Toast.LENGTH_SHORT).show();
     }
+
+
 }
