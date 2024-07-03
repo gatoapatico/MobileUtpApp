@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import androidx.annotation.Nullable;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "restaurant.db";
@@ -16,18 +18,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_PASSWORD = "password";
 
-    private static final String TABLE_CREATE_USERS =
-            "CREATE TABLE IF NOT EXISTS " + TABLE_USERS + " (" +
-                    COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    COLUMN_USERNAME + " TEXT, " +
-                    COLUMN_PASSWORD + " TEXT);";
-
-    // Tabla Platos
     public static final String TABLE_PLATOS = "Platos";
     public static final String COLUMN_PLATO_ID = "id";
     public static final String COLUMN_PLATO_NOMBRE = "nombre";
     public static final String COLUMN_PLATO_DESCRIPCION = "descripcion";
     public static final String COLUMN_PLATO_PRECIO = "precio";
+    private static final String COLUMN_IMAGE_PATH = "image_path";
+
+    public static final String TABLE_INSUMOS = "Insumos";
+    public static final String COLUMN_INSUMO_ID = "id";
+    public static final String COLUMN_INSUMO_NAME = "insumo";
+    public static final String COLUMN_INSUMO_COST = "precio";
+    public static final String COLUMN_INSUMO_WEIGHT = "peso";
+
+    private static final String TABLE_CREATE_USERS =
+            "CREATE TABLE IF NOT EXISTS " + TABLE_USERS + " (" +
+                    COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    COLUMN_USERNAME + " TEXT, " +
+                    COLUMN_PASSWORD + " TEXT);";
 
     private static final String TABLE_CREATE_PLATOS =
             "CREATE TABLE IF NOT EXISTS " + TABLE_PLATOS + " (" +
@@ -56,6 +64,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     COLUMN_PEDIDO_MESA + " TEXT, " +
                     COLUMN_PEDIDO_FECHA + " INTEGER);";
 
+    private static final String TABLE_CREATE_INSUMOS =
+            "CREATE TABLE IF NOT EXISTS " + TABLE_INSUMOS + " (" +
+                    COLUMN_INSUMO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    COLUMN_INSUMO_NAME + " TEXT, " +
+                    COLUMN_INSUMO_COST + " REAL, " +
+                    COLUMN_INSUMO_WEIGHT + " INTEGER);";
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         checkAndCreateTables();
@@ -65,6 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(TABLE_CREATE_USERS);
         db.execSQL(TABLE_CREATE_PLATOS);
+        db.execSQL(TABLE_CREATE_INSUMOS);
         db.execSQL(TABLE_CREATE_PEDIDOS);
     }
 
@@ -72,6 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_PLATOS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_INSUMOS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_PEDIDOS);
         onCreate(db);
     }
@@ -93,9 +109,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             if (!isTableExists(db, TABLE_PLATOS)) {
                 db.execSQL(TABLE_CREATE_PLATOS);
             }
-            if (!isTableExists(db, TABLE_PEDIDOS)) {
-                db.execSQL(TABLE_CREATE_PEDIDOS);
+            if (!isTableExists(db, TABLE_INSUMOS)) {
+                db.execSQL(TABLE_CREATE_INSUMOS);
             }
+
         } finally {
             db.close();
         }
