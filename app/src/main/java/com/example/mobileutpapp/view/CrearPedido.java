@@ -11,11 +11,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.mobileutpapp.R;
 import com.example.mobileutpapp.controller.PedidoController;
 import com.example.mobileutpapp.controller.PlatoController;
 import com.example.mobileutpapp.entity.Pedido;
 import com.example.mobileutpapp.entity.Plato;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,8 +106,11 @@ public class CrearPedido extends AppCompatActivity {
         // Calcular el costo total
         double costoTotal = selectedPlato.getPrecio() * cantidad;
 
+        // Obtener fecha actual en milisegundos
+        long fecha = System.currentTimeMillis();
+
         // Crear instancia de Pedido
-        Pedido pedido = new Pedido(0, selectedPlato.getId(), selectedPlato.getPrecio(), cantidad, costoTotal, mesa);
+        Pedido pedido = new Pedido(0, selectedPlato.getId(), selectedPlato.getPrecio(), cantidad, costoTotal, mesa, fecha);
 
         // Guardar el Pedido utilizando el controlador de Pedidos
         PedidoController pedidoController = new PedidoController(this);

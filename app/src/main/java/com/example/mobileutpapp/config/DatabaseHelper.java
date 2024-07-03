@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "restaurant.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;  // Incrementar la versión de la base de datos
 
     // Tabla Usuarios
     public static final String TABLE_USERS = "users";
@@ -44,6 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PEDIDO_CANTIDAD = "cantidad";
     public static final String COLUMN_PEDIDO_COSTO_TOTAL = "costo_total";
     public static final String COLUMN_PEDIDO_MESA = "mesa";
+    public static final String COLUMN_PEDIDO_FECHA = "fecha";  // Nueva columna para la fecha
 
     private static final String TABLE_CREATE_PEDIDOS =
             "CREATE TABLE IF NOT EXISTS " + TABLE_PEDIDOS + " (" +
@@ -52,7 +53,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     COLUMN_PEDIDO_PRECIO + " REAL, " +
                     COLUMN_PEDIDO_CANTIDAD + " INTEGER, " +
                     COLUMN_PEDIDO_COSTO_TOTAL + " REAL, " +
-                    COLUMN_PEDIDO_MESA + " TEXT);"; // Cambiado a TEXT
+                    COLUMN_PEDIDO_MESA + " TEXT, " +
+                    COLUMN_PEDIDO_FECHA + " INTEGER);";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

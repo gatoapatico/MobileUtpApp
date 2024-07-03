@@ -19,6 +19,7 @@ public class PedidoController {
     private static final String COLUMN_PEDIDO_CANTIDAD = "cantidad";
     private static final String COLUMN_PEDIDO_COSTO_TOTAL = "costo_total";
     private static final String COLUMN_PEDIDO_MESA = "mesa";
+    private static final String COLUMN_PEDIDO_FECHA = "fecha";
 
     private DatabaseHelper dbHelper;
 
@@ -34,6 +35,7 @@ public class PedidoController {
         values.put(COLUMN_PEDIDO_CANTIDAD, pedido.getCantidad());
         values.put(COLUMN_PEDIDO_COSTO_TOTAL, pedido.getCostoTotal());
         values.put(COLUMN_PEDIDO_MESA, pedido.getMesa());
+        values.put(COLUMN_PEDIDO_FECHA, pedido.getFecha());  // Agregar la fecha al ContentValues
         db.insert(TABLE_PEDIDOS, null, values);
         db.close();
     }
@@ -56,7 +58,8 @@ public class PedidoController {
                     cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_PRECIO)),
                     cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_CANTIDAD)),
                     cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_COSTO_TOTAL)),
-                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_MESA))
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_MESA)),
+                    cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_FECHA))
             );
             cursor.close();
         }
@@ -77,7 +80,8 @@ public class PedidoController {
                         cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_PRECIO)),
                         cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_CANTIDAD)),
                         cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_COSTO_TOTAL)),
-                        cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_MESA))
+                        cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_MESA)),
+                        cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_FECHA))
                 );
                 pedidos.add(pedido);
             } while (cursor.moveToNext());
@@ -85,23 +89,5 @@ public class PedidoController {
         }
         db.close();
         return pedidos;
-    }
-
-    public void updatePedido(Pedido pedido) {
-        SQLiteDatabase db = dbHelper.openWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_PEDIDO_ID_PRODUCTO, pedido.getIdProducto());
-        values.put(COLUMN_PEDIDO_PRECIO, pedido.getPrecio());
-        values.put(COLUMN_PEDIDO_CANTIDAD, pedido.getCantidad());
-        values.put(COLUMN_PEDIDO_COSTO_TOTAL, pedido.getCostoTotal());
-        values.put(COLUMN_PEDIDO_MESA, pedido.getMesa());
-        db.update(TABLE_PEDIDOS, values, COLUMN_PEDIDO_ID + " = ?", new String[]{String.valueOf(pedido.getId())});
-        db.close();
-    }
-
-    public void deletePedido(int pedidoId) {
-        SQLiteDatabase db = dbHelper.openWritableDatabase();
-        db.delete(TABLE_PEDIDOS, COLUMN_PEDIDO_ID + " = ?", new String[]{String.valueOf(pedidoId)});
-        db.close();
     }
 }

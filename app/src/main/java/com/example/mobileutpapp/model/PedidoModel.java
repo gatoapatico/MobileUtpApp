@@ -13,12 +13,13 @@ import java.util.List;
 
 public class PedidoModel {
     private static final String TABLE_PEDIDOS = "Pedidos";
-    private static final String COLUMN_ID = "id";
-    private static final String COLUMN_ID_PRODUCTO = "id_producto";
-    private static final String COLUMN_PRECIO = "precio";
-    private static final String COLUMN_CANTIDAD = "cantidad";
-    private static final String COLUMN_COSTO_TOTAL = "costo_total";
-    private static final String COLUMN_MESA = "mesa";
+    private static final String COLUMN_PEDIDO_ID = "id";
+    private static final String COLUMN_PEDIDO_ID_PRODUCTO = "id_producto";
+    private static final String COLUMN_PEDIDO_PRECIO = "precio";
+    private static final String COLUMN_PEDIDO_CANTIDAD = "cantidad";
+    private static final String COLUMN_PEDIDO_COSTO_TOTAL = "costo_total";
+    private static final String COLUMN_PEDIDO_MESA = "mesa";
+    private static final String COLUMN_PEDIDO_FECHA = "fecha";
 
     private DatabaseHelper dbHelper;
 
@@ -32,14 +33,15 @@ public class PedidoModel {
     public void addPedido(Pedido pedido) {
         SQLiteDatabase db = dbHelper.openWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_ID_PRODUCTO, pedido.getIdProducto());
-        values.put(COLUMN_PRECIO, pedido.getPrecio());
-        values.put(COLUMN_CANTIDAD, pedido.getCantidad());
-        values.put(COLUMN_COSTO_TOTAL, pedido.getCostoTotal());
-        values.put(COLUMN_MESA, pedido.getMesa());
+        values.put(COLUMN_PEDIDO_ID_PRODUCTO, pedido.getIdProducto());
+        values.put(COLUMN_PEDIDO_PRECIO, pedido.getPrecio());
+        values.put(COLUMN_PEDIDO_CANTIDAD, pedido.getCantidad());
+        values.put(COLUMN_PEDIDO_COSTO_TOTAL, pedido.getCostoTotal());
+        values.put(COLUMN_PEDIDO_MESA, pedido.getMesa());
+        values.put(COLUMN_PEDIDO_FECHA, pedido.getFecha());
         db.insert(TABLE_PEDIDOS, null, values);
         db.close();
     }
 
-    // Puedes implementar métodos adicionales según tus necesidades, como obtener todos los pedidos, actualizar, eliminar, etc.
+    // Métodos adicionales según necesidades (getPedidoById, getAllPedidos, updatePedido, deletePedido)
 }
