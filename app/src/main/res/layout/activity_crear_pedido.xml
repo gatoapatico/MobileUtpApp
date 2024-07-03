@@ -5,17 +5,82 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.CrearPedido">
+    tools:context=".view.CrearPedido"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-69dp">
 
     <TextView
         android:id="@+id/txtCrearPedido_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="28dp"
         android:text="Crear Pedido"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_platos"
+        android:layout_width="336dp"
+        android:layout_height="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCrearPedido_titulo" />
+
+    <EditText
+        android:id="@+id/edit_text_cantidad"
+        android:layout_width="345dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/edit_text_precio"
+        android:layout_marginTop="16dp"
+        android:hint="Cantidad de platos"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_precio" />
+
+    <Spinner
+        android:id="@+id/spinner_mesas"
+        android:layout_width="349dp"
+        android:layout_height="34dp"
+        android:layout_below="@id/edit_text_cantidad"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_cantidad" />
+
+    <Button
+        android:id="@+id/btn_guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="152dp"
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_mesas" />
+
+    <EditText
+        android:id="@+id/edit_text_precio"
+        android:layout_width="344dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/spinner_platos"
+        android:layout_marginTop="24dp"
+        android:enabled="false"
+        android:hint="Precio del plato"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_platos" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
