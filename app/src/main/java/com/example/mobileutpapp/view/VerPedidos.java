@@ -1,26 +1,36 @@
 package com.example.mobileutpapp.view;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.mobileutpapp.R;
+import com.example.mobileutpapp.adapter.PedidoAdapter;
+import com.example.mobileutpapp.controller.PedidoController;
+import com.example.mobileutpapp.entity.Pedido;
+
+import java.util.List;
 
 public class VerPedidos extends AppCompatActivity {
+
+    private ListView listViewPedidos;
+    private PedidoController pedidoController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_ver_pedidos);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        listViewPedidos = findViewById(R.id.listViewPedidos);
+        pedidoController = new PedidoController(this);
+
+        loadPedidos();
+    }
+
+    private void loadPedidos() {
+        List<Pedido> pedidos = pedidoController.getAllPedidos();
+        PedidoAdapter adapter = new PedidoAdapter(this, pedidos);
+        listViewPedidos.setAdapter(adapter);
     }
 }

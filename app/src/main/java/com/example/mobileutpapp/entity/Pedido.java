@@ -74,4 +74,17 @@ public class Pedido {
     public void setFecha(long fecha) {
         this.fecha = fecha;
     }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "id=" + id +
+                ", idProducto=" + idProducto +
+                ", precio=" + precio +
+                ", cantidad=" + cantidad +
+                ", costoTotal=" + costoTotal +
+                ", mesa='" + mesa + '\'' +
+                ", fecha=" + fecha +
+                '}';
+    }
 }
