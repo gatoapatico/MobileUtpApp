@@ -90,4 +90,11 @@ public class PedidoController {
         db.close();
         return pedidos;
     }
+
+    public boolean eliminarPedido(int idPedido) {
+        SQLiteDatabase db = dbHelper.openWritableDatabase();
+        int eliminados = db.delete(TABLE_PEDIDOS, COLUMN_PEDIDO_ID + " = ?", new String[]{String.valueOf(idPedido)});
+        db.close();
+        return eliminados > 0;
+    }
 }
