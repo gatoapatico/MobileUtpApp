@@ -52,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     COLUMN_PEDIDO_PRECIO + " REAL, " +
                     COLUMN_PEDIDO_CANTIDAD + " INTEGER, " +
                     COLUMN_PEDIDO_COSTO_TOTAL + " REAL, " +
-                    COLUMN_PEDIDO_MESA + " INTEGER);";
+                    COLUMN_PEDIDO_MESA + " TEXT);"; // Cambiado a TEXT
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

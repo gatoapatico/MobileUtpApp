@@ -95,8 +95,8 @@ public class CrearPedido extends AppCompatActivity {
 
         String cantidadStr = editTextCantidad.getText().toString();
         int cantidad = cantidadStr.isEmpty() ? 0 : Integer.parseInt(cantidadStr);
-        String mesaStr = spinnerMesas.getSelectedItem().toString();
-        int mesa = Integer.parseInt(mesaStr);
+
+        String mesa = spinnerMesas.getSelectedItem().toString();
 
         // Calcular el costo total
         double costoTotal = selectedPlato.getPrecio() * cantidad;
@@ -111,6 +111,4 @@ public class CrearPedido extends AppCompatActivity {
         // Mostrar mensaje de éxito al usuario
         Toast.makeText(this, "Pedido guardado correctamente", Toast.LENGTH_SHORT).show();
     }
-
-
 }

@@ -56,7 +56,7 @@ public class PedidoController {
                     cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_PRECIO)),
                     cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_CANTIDAD)),
                     cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_COSTO_TOTAL)),
-                    cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_MESA))
+                    cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_MESA))
             );
             cursor.close();
         }
@@ -77,7 +77,7 @@ public class PedidoController {
                         cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_PRECIO)),
                         cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_CANTIDAD)),
                         cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_COSTO_TOTAL)),
-                        cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_MESA))
+                        cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PEDIDO_MESA))
                 );
                 pedidos.add(pedido);
             } while (cursor.moveToNext());

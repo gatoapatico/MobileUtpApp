@@ -2,10 +2,14 @@ package com.example.mobileutpapp.model;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.mobileutpapp.config.DatabaseHelper;
 import com.example.mobileutpapp.entity.Pedido;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PedidoModel {
     private static final String TABLE_PEDIDOS = "Pedidos";
