@@ -14,8 +14,8 @@ public class PlatoController {
         platoModel = new PlatoModel(context);
     }
 
-    public void addPlato(String nombre, String descripcion, double precio) {
-        Plato plato = new Plato(0, nombre, descripcion, precio); // El ID se autogenerará en la base de datos
+    public void addPlato(String nombre, String descripcion, double precio, byte[] imagen) {
+        Plato plato = new Plato(0, nombre, descripcion, precio, imagen); // El ID se autogenerará en la base de datos
         platoModel.addPlato(plato);
     }
 
@@ -27,8 +27,8 @@ public class PlatoController {
         return platoModel.getAllPlatos();
     }
 
-    public void updatePlato(int id, String nombre, String descripcion, double precio) {
-        Plato plato = new Plato(id, nombre, descripcion, precio);
+    public void updatePlato(int id, String nombre, String descripcion, double precio, byte[] imagen) {
+        Plato plato = new Plato(id, nombre, descripcion, precio, imagen);
         platoModel.updatePlato(plato);
     }
 

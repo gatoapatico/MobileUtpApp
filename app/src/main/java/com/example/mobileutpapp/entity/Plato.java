@@ -5,12 +5,14 @@ public class Plato {
     private String nombre;
     private String descripcion;
     private double precio;
+    private byte[] imagen;
 
-    public Plato(int id, String nombre, String descripcion, double precio) {
+    public Plato(int id, String nombre, String descripcion, double precio, byte[] imagen) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.imagen = imagen;
     }
 
     public Plato(String nombre, String descripcion, double precio) {
@@ -50,6 +52,14 @@ public class Plato {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
     }
 
 }

@@ -24,7 +24,7 @@ public class SupplyModel {
         SQLiteDatabase db = dbHelper.openWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("insumo", supplies.getInsumo());
-        values.put("costo", supplies.getPrecio());
+        values.put("precio", supplies.getPrecio());
         values.put("peso", supplies.getPeso());
         db.insert("Insumos", null, values);
         db.close();
@@ -46,7 +46,7 @@ public class SupplyModel {
             Supply supply = new Supply(
                     cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                     cursor.getString(cursor.getColumnIndexOrThrow("insumo")),
-                    cursor.getFloat(cursor.getColumnIndexOrThrow("costo")),
+                    cursor.getFloat(cursor.getColumnIndexOrThrow("precio")),
                     cursor.getFloat(cursor.getColumnIndexOrThrow("peso"))
             );
             cursor.close();
@@ -70,7 +70,7 @@ public class SupplyModel {
                 do {
                     @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex("id"));
                     @SuppressLint("Range") String insumo = cursor.getString(cursor.getColumnIndex("insumo"));
-                    @SuppressLint("Range") float precio = cursor.getFloat(cursor.getColumnIndex("costo"));
+                    @SuppressLint("Range") float precio = cursor.getFloat(cursor.getColumnIndex("precio"));
                     @SuppressLint("Range") float peso = cursor.getFloat(cursor.getColumnIndex("peso"));
                     supplies.add(new Supply(id, insumo, precio, peso));
                 } while (cursor.moveToNext());
@@ -92,7 +92,7 @@ public class SupplyModel {
             db = dbHelper.openWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("insumo", supplies.getInsumo());
-            values.put("costo", supplies.getPrecio());
+            values.put("precio", supplies.getPrecio());
             values.put("peso", supplies.getPeso());
             db.update("Insumos", values, "id" + " = ?", new String[]{String.valueOf(supplies.getId())});
         } finally {

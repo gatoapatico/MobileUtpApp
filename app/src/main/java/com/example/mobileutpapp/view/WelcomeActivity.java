@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import com.example.mobileutpapp.R;
 import com.google.android.material.navigation.NavigationView;
@@ -93,10 +92,6 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
             case R.id.nav_ingInsumos:
                 Intent intentAddSuply = new Intent(WelcomeActivity.this, AddSupplyActivity.class);
                 startActivity(intentAddSuply);
-                break;
-            case R.id.nav_detInsumos:
-                Intent intentDetalleIng = new Intent(WelcomeActivity.this, DetalleIngresoInsumosActivity.class);
-                startActivity(intentDetalleIng);
                 break;
             case R.id.nav_almacen:
                 Intent intentAlmacen = new Intent(WelcomeActivity.this, AlmacenActivity.class);

@@ -1,6 +1,7 @@
 package com.example.mobileutpapp.view;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,8 @@ import com.example.mobileutpapp.R;
 import com.example.mobileutpapp.controller.PlatoController;
 import com.example.mobileutpapp.entity.Plato;
 
+import java.io.ByteArrayOutputStream;
+
 public class PlatoEditActivity extends AppCompatActivity {
     private EditText etProductoNombre;
     private EditText etProductoPrecio;
@@ -22,6 +25,7 @@ public class PlatoEditActivity extends AppCompatActivity {
     private Button btnPlatosBack;
     private PlatoController platoController;
     private int platoId;
+    private Bitmap updatedPlatoImagen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +57,11 @@ public class PlatoEditActivity extends AppCompatActivity {
                 String updatedDescripcion = etProductoDescripcion.getText().toString();
 
                 if (!updatedNombre.isEmpty() && !updatedPrecio.isEmpty() && !updatedDescripcion.isEmpty()) {
-                    platoController.updatePlato(platoId, updatedNombre, updatedDescripcion, Double.parseDouble(updatedPrecio));
+                    byte[] imageBytes = null;
+                    if (updatedPlatoImagen != null) {
+                        imageBytes = convertBitmapToByteArray(updatedPlatoImagen);
+                    }
+                    platoController.updatePlato(platoId, updatedNombre, updatedDescripcion, Double.parseDouble(updatedPrecio), imageBytes);
                     Toast.makeText(PlatoEditActivity.this, "Plato actualizado satisfactoriamente", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(PlatoEditActivity.this, PlatosActivity.class);
                     startActivity(intent);
@@ -82,5 +90,11 @@ public class PlatoEditActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private byte[] convertBitmapToByteArray(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        return stream.toByteArray();
     }
 }
