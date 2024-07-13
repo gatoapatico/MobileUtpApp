@@ -17,7 +17,7 @@ public class PlatoModel {
     private static final String COLUMN_NOMBRE = "nombre";
     private static final String COLUMN_DESCRIPCION = "descripcion";
     private static final String COLUMN_PRECIO = "precio";
-
+    private static final String COLUMN_IMAGEN = "imagen";
     private DatabaseHelper dbHelper;
 
     public PlatoModel(Context context) {
@@ -33,6 +33,7 @@ public class PlatoModel {
         values.put(COLUMN_NOMBRE, plato.getNombre());
         values.put(COLUMN_DESCRIPCION, plato.getDescripcion());
         values.put(COLUMN_PRECIO, plato.getPrecio());
+        values.put(COLUMN_IMAGEN, plato.getImagen());
         db.insert(TABLE_PLATOS, null, values);
         db.close();
     }
@@ -47,13 +48,14 @@ public class PlatoModel {
                 null,
                 null);
 
-        if (cursor != null) {
+        if (cursor != null && cursor.moveToFirst()) {
             cursor.moveToFirst();
             Plato plato = new Plato(
                     cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID)),
                     cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NOMBRE)),
                     cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DESCRIPCION)),
-                    cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PRECIO))
+                    cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_PRECIO)),
+                    cursor.getBlob(cursor.getColumnIndexOrThrow(COLUMN_IMAGEN))
             );
             cursor.close();
             db.close();
@@ -78,7 +80,8 @@ public class PlatoModel {
                     String nombre = cursor.getString(cursor.getColumnIndex(COLUMN_NOMBRE));
                     String descripcion = cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPCION));
                     double precio = cursor.getDouble(cursor.getColumnIndex(COLUMN_PRECIO));
-                    platos.add(new Plato(id, nombre, descripcion, precio));
+                    byte[] imagen = cursor.getBlob(cursor.getColumnIndex(COLUMN_IMAGEN));
+                    platos.add(new Plato(id, nombre, descripcion, precio, imagen));
                 } while (cursor.moveToNext());
             }
         } finally {
@@ -100,6 +103,7 @@ public class PlatoModel {
             values.put(COLUMN_NOMBRE, plato.getNombre());
             values.put(COLUMN_DESCRIPCION, plato.getDescripcion());
             values.put(COLUMN_PRECIO, plato.getPrecio());
+            values.put(COLUMN_IMAGEN, plato.getImagen());
             db.update(TABLE_PLATOS, values, COLUMN_ID + " = ?", new String[]{String.valueOf(plato.getId())});
         } finally {
             if (db != null) {

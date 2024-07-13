@@ -8,7 +8,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -308,10 +307,6 @@ public class AddSupplyActivity extends AppCompatActivity implements NavigationVi
                 break;
             case R.id.nav_ingInsumos:
                 Toast.makeText(this, "Ya estás en la pantalla de Ingreso de Insumos", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_detInsumos:
-                Intent intentDetalleIng = new Intent(AddSupplyActivity.this, DetalleIngresoInsumosActivity.class);
-                startActivity(intentDetalleIng);
                 break;
             case R.id.nav_almacen:
                 Intent intentAlmacen = new Intent(AddSupplyActivity.this, AlmacenActivity.class);

@@ -1,6 +1,9 @@
 package com.example.mobileutpapp.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +19,7 @@ public class VerPedidos extends AppCompatActivity {
 
     private ListView listViewPedidos;
     private PedidoController pedidoController;
+    private Button btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +28,15 @@ public class VerPedidos extends AppCompatActivity {
 
         listViewPedidos = findViewById(R.id.listViewPedidos);
         pedidoController = new PedidoController(this);
+        btn_back = findViewById(R.id.btn_back);
 
         loadPedidos();
+        btn_back.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v){
+            finish();
+        }
+    });
     }
 
     private void loadPedidos() {
@@ -33,4 +44,5 @@ public class VerPedidos extends AppCompatActivity {
         PedidoAdapter adapter = new PedidoAdapter(this, pedidos);
         listViewPedidos.setAdapter(adapter);
     }
+
 }

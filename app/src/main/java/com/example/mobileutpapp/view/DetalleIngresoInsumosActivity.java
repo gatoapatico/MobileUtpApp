@@ -51,9 +51,6 @@ public class DetalleIngresoInsumosActivity extends AppCompatActivity implements 
                 Intent intentAddSuply = new Intent(DetalleIngresoInsumosActivity.this, AddSupplyActivity.class);
                 startActivity(intentAddSuply);
                 break;
-            case R.id.nav_detInsumos:
-                Toast.makeText(this, "Ya estás en la pantalla de Detalle de Insumos", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.nav_almacen:
                 Intent intentAlmacen = new Intent(DetalleIngresoInsumosActivity.this, AlmacenActivity.class);
                 startActivity(intentAlmacen);

@@ -6,21 +6,15 @@
 
     <group
         android:checkableBehavior="single">
-
         <item
             android:id="@+id/nav_inicio"
             android:title="Inicio"/>
-
         <item
             android:id="@+id/nav_menu"
             android:title="Menu"/>
-
         <item
             android:id="@+id/nav_ingInsumos"
             android:title="Ingresar Insumos"/>
-        <item
-            android:id="@+id/nav_detInsumos"
-            android:title="Detalles Insumos"/>
         <item
             android:id="@+id/nav_almacen"
             android:title="Almacen"/>

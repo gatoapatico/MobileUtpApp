@@ -50,10 +50,6 @@ public class ReporteActivity extends AppCompatActivity implements NavigationView
                 Intent intentAddSuply = new Intent(ReporteActivity.this, AddSupplyActivity.class);
                 startActivity(intentAddSuply);
                 break;
-            case R.id.nav_detInsumos:
-                Intent intentDetalleIng = new Intent(ReporteActivity.this, DetalleIngresoInsumosActivity.class);
-                startActivity(intentDetalleIng);
-                break;
             case R.id.nav_almacen:
                 Intent intentAlmacen = new Intent(ReporteActivity.this, AlmacenActivity.class);
                 startActivity(intentAlmacen);

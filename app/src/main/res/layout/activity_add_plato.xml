@@ -25,16 +25,29 @@
 
         <Button
             android:id="@+id/btn_addplato_platos"
-            android:layout_width="97dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="32dp"
+            android:layout_width="84dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/btn_background_1"
             android:fontFamily="@font/baloo_bhai_2_semibold"
-            android:text="PLATOS"
+            android:text="ATRAS"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="256dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/baloo"
+            android:text="Menu para agregar Platos de Comida"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_addplato_platos" />
 
         <EditText
             android:id="@+id/et_addpl_nombrePlato"
@@ -48,18 +61,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="242dp"
-            android:layout_height="127dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/baloo_bhai_2_semibold"
-            android:text="Menu para agregar Platos de Comida"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_addplato_platos" />
-
         <EditText
             android:id="@+id/et_addpl_precioPlato"
             android:layout_width="wrap_content"
@@ -71,19 +72,6 @@
             android:inputType="numberDecimal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_addpl_nombrePlato" />
-
-        <Button
-            android:id="@+id/btn_addplato_addplato"
-            android:layout_width="291dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/btn_background_1"
-            android:fontFamily="@font/baloo_bhai_2_semibold"
-            android:text="REGISTRAR PLATO DE COMIDA"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_addpl_descripcion" />
 
         <EditText
             android:id="@+id/et_addpl_descripcion"
@@ -97,6 +85,41 @@
             android:inputType="textMultiLine"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_addpl_precioPlato" />
+
+        <!-- Nueva sección para tomar una foto -->
+        <ImageView
+            android:id="@+id/iv_plato_image"
+            android:layout_width="170dp"
+            android:layout_height="147dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_addpl_descripcion" />
+
+        <Button
+            android:id="@+id/btn_take_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Tomar Foto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_plato_image" />
+
+        <Button
+            android:id="@+id/btn_addplato_addplato"
+            android:layout_width="291dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/btn_background_1"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="REGISTRAR PLATO DE COMIDA"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_take_photo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

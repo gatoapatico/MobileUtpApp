@@ -65,10 +65,6 @@ public class AlmacenActivity extends AppCompatActivity implements NavigationView
                 Intent intentAddSuply = new Intent(AlmacenActivity.this, AddSupplyActivity.class);
                 startActivity(intentAddSuply);
                 break;
-            case R.id.nav_detInsumos:
-                Intent intentDetalleIng = new Intent(AlmacenActivity.this, DetalleIngresoInsumosActivity.class);
-                startActivity(intentDetalleIng);
-                break;
             case R.id.nav_almacen:
                 Toast.makeText(this, "Ya estás en la pantalla de Almacen", Toast.LENGTH_SHORT).show();
                 break;

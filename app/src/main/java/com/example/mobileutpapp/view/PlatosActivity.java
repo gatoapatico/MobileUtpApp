@@ -19,7 +19,7 @@ import java.util.List;
 public class PlatosActivity extends AppCompatActivity {
     private GridLayout gridLayoutUsers;
     private PlatoController platoController;
-    private Button btn_almacen;
+    private Button btn_back;
     private Button btn_agregar_plato;
 
     @Override
@@ -27,7 +27,7 @@ public class PlatosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_platos);
 
-        btn_almacen = findViewById(R.id.btn_platos_almacen);
+        btn_back = findViewById(R.id.btn_back);
         btn_agregar_plato = findViewById(R.id.btn_platos_agregar);
         gridLayoutUsers = findViewById(R.id.gridLayoutUsers);
         platoController = new PlatoController(this);
@@ -58,11 +58,10 @@ public class PlatosActivity extends AppCompatActivity {
             gridLayoutUsers.addView(platoButton);
         }
 
-        btn_almacen.setOnClickListener(new View.OnClickListener() {
+        btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlatosActivity.this, AlmacenActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

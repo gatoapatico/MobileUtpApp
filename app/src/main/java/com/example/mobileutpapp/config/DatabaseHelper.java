@@ -42,7 +42,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     COLUMN_PLATO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_PLATO_NOMBRE + " TEXT, " +
                     COLUMN_PLATO_DESCRIPCION + " TEXT, " +
-                    COLUMN_PLATO_PRECIO + " REAL);";
+                    COLUMN_PLATO_PRECIO + " REAL," +
+                    COLUMN_IMAGE_PATH + " BLOB);";
 
     // Tabla Pedidos
     public static final String TABLE_PEDIDOS = "Pedidos";

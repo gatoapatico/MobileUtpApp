@@ -39,11 +39,11 @@ public class AddUserActivity extends AppCompatActivity {
 
                 if (InputValidator.isValid(newUsername, newPassword)) {
                     userController.registerUser(newUsername, newPassword);
-                    Toast.makeText(AddUserActivity.this, "User added successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddUserActivity.this, "Usuario agregado satisfactoriamente", Toast.LENGTH_SHORT).show();
                     etNewUsername.setText("");
                     etNewPassword.setText("");
                 } else {
-                    Toast.makeText(AddUserActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddUserActivity.this, "Por favor llenar todos los campos", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 import com.example.mobileutpapp.R;
 import com.google.android.material.navigation.NavigationView;
@@ -21,6 +20,7 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     private Button btnCarta;
     private DrawerLayout drawerLayout;
     private AppCompatImageButton btn_menu;
+    private Button btn_pedidos;
     @SuppressLint("WrongViewCast")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +28,18 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
 
         btnCarta = findViewById(R.id.btnCarta);
         btn_menu = findViewById(R.id.bottomNavigationView);
+        btn_pedidos = findViewById(R.id.btnPedidos);
         btnCarta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, CartaActivity.class);
-                startActivity(intent);
+                Intent intentCarta = new Intent(MenuActivity.this, CartaActivity.class);
+                startActivity(intentCarta);
+            }
+        });
+        btn_pedidos.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intentPedidos = new Intent(MenuActivity.this, VerPedidos.class);
+                startActivity(intentPedidos);
             }
         });
 
@@ -60,10 +67,6 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_ingInsumos:
                 Intent intentAddSuply = new Intent(MenuActivity.this, AddSupplyActivity.class);
                 startActivity(intentAddSuply);
-                break;
-            case R.id.nav_detInsumos:
-                Intent intentDetalleIng = new Intent(MenuActivity.this, DetalleIngresoInsumosActivity.class);
-                startActivity(intentDetalleIng);
                 break;
             case R.id.nav_almacen:
                 Intent intentAlmacen = new Intent(MenuActivity.this, AlmacenActivity.class);
