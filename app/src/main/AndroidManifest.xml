@@ -41,7 +41,7 @@
         <activity android:name=".view.AddUserActivity" />
         <activity android:name=".view.UserListActivity" />
         <activity android:name=".view.EditUserActivity" />
-        <activity android:name=".view.PlatosActivity" />
+        <activity android:name=".view.PlatoActivity" />
         <activity android:name=".view.PlatosInfoActivity" />
         <activity android:name=".view.PlatoAddActivity" />
         <activity android:name=".view.PlatoEditActivity" />

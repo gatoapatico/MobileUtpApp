@@ -1,4 +1,4 @@
-package com.example.mobileutpapp.adapter;
+package com.example.mobileutpapp.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

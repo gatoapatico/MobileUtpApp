@@ -42,7 +42,7 @@ public class AlmacenActivity extends AppCompatActivity implements NavigationView
         btn_productos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AlmacenActivity.this, PlatosActivity.class);
+                Intent intent = new Intent(AlmacenActivity.this, PlatoActivity.class);
                 startActivity(intent);
             }
         });
