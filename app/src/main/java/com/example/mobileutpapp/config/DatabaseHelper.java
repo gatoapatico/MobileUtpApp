@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PLATO_NOMBRE = "nombre";
     public static final String COLUMN_PLATO_DESCRIPCION = "descripcion";
     public static final String COLUMN_PLATO_PRECIO = "precio";
-    private static final String COLUMN_IMAGE_PATH = "image_path";
+    private static final String COLUMN_IMAGE_PATH = "imagen";
 
     public static final String TABLE_INSUMOS = "Insumos";
     public static final String COLUMN_INSUMO_ID = "id";
@@ -53,7 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PEDIDO_CANTIDAD = "cantidad";
     public static final String COLUMN_PEDIDO_COSTO_TOTAL = "costo_total";
     public static final String COLUMN_PEDIDO_MESA = "mesa";
-    public static final String COLUMN_PEDIDO_FECHA = "fecha";  // Nueva columna para la fecha
+    public static final String COLUMN_PEDIDO_FECHA = "fecha";
 
     private static final String TABLE_CREATE_PEDIDOS =
             "CREATE TABLE IF NOT EXISTS " + TABLE_PEDIDOS + " (" +

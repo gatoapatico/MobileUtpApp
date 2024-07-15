@@ -16,7 +16,7 @@ import com.example.mobileutpapp.entity.Plato;
 
 import java.util.List;
 
-public class PlatosActivity extends AppCompatActivity {
+public class PlatoActivity extends AppCompatActivity {
     private GridLayout gridLayoutUsers;
     private PlatoController platoController;
     private Button btn_back;
@@ -51,7 +51,7 @@ public class PlatosActivity extends AppCompatActivity {
             platoButton.setHeight(400);
 
             platoButton.setOnClickListener(v -> {
-                Intent intent = new Intent(PlatosActivity.this, PlatosInfoActivity.class);
+                Intent intent = new Intent(PlatoActivity.this, PlatosInfoActivity.class);
                 intent.putExtra("PLATO_ID", plato.getId());
                 startActivity(intent);
             });
@@ -59,16 +59,17 @@ public class PlatosActivity extends AppCompatActivity {
         }
 
         btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                finish();
-            }
+            Intent intent = new Intent(PlatoActivity.this, AlmacenActivity.class);
+
+            startActivity(intent);
+             }
         });
 
         btn_agregar_plato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlatosActivity.this, PlatoAddActivity.class);
+                Intent intent = new Intent(PlatoActivity.this, PlatoAddActivity.class);
                 startActivity(intent);
             }
         });

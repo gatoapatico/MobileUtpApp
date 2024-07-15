@@ -13,9 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobileutpapp.R;
 import com.example.mobileutpapp.controller.PlatoController;
-import com.example.mobileutpapp.controller.UserController;
 import com.example.mobileutpapp.entity.Plato;
-import com.example.mobileutpapp.entity.User;
 
 import java.io.ByteArrayOutputStream;
 
@@ -38,7 +36,7 @@ public class PlatosInfoActivity extends AppCompatActivity {
         tvPlatoNombre = findViewById(R.id.tvNombrePlato);
         tvPrecio = findViewById(R.id.tvPrecio);
         tvDescripcion = findViewById(R.id.tvDescripcion);
-        ivPlatoImage = findViewById(R.id.ivPlatoImage);
+        ivPlatoImage = findViewById(R.id.imageViewPlatoInfo);
         platoController = new PlatoController(this);
 
         Intent intent = getIntent();
@@ -62,7 +60,7 @@ public class PlatosInfoActivity extends AppCompatActivity {
         btn_platos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlatosInfoActivity.this, PlatosActivity.class);
+                Intent intent = new Intent(PlatosInfoActivity.this, PlatoActivity.class);
                 startActivity(intent);
             }
         });

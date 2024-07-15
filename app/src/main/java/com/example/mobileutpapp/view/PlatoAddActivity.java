@@ -119,7 +119,7 @@ public class PlatoAddActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Plato añadido", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(PlatoAddActivity.this, PlatosActivity.class);
+        Intent intent = new Intent(PlatoAddActivity.this, PlatoActivity.class);
         startActivity(intent);
         finish();
     }
