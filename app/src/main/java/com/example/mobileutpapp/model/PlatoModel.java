@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.mobileutpapp.config.DatabaseHelper;
 import com.example.mobileutpapp.entity.Plato;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

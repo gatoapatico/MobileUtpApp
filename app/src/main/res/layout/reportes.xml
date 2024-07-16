@@ -38,6 +38,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_reportePlatos"
+            android:layout_width="273dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="72dp"
+            android:background="@drawable/btn_background_1"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Reporte platos"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

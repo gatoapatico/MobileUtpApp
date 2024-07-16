@@ -30,6 +30,7 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
 
     //variable que nos permitirá direccionar a gestión pedidos
     Button pedidos;
+    Button reportes;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,17 @@ public class WelcomeActivity extends AppCompatActivity implements NavigationView
             }
         });
 
+
+        //Al hacer clic nos llevará a gestión de reportes
+        reportes =(Button)findViewById(R.id.btn_reportes);
+        reportes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WelcomeActivity.this, ReporteActivity.class);
+                startActivity(intent);
+            }
+        });
+        //fin codigo de gestión de reportes
 
 
         btn_menu.setOnClickListener(new View.OnClickListener() {
