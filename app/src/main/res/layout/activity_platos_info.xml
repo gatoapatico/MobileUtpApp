@@ -23,11 +23,10 @@
         android:id="@+id/imageViewPlatoInfo"
         android:layout_width="126dp"
         android:layout_height="126dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrecioTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNombrePlato"
+        tools:layout_editor_absoluteX="32dp" />
 
     <Button
         android:id="@+id/btn_platosinfo_platos"
@@ -55,38 +54,38 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_platosinfo_platos" />
 
     <TextView
-        android:id="@+id/tvPrecioTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/tvDescripcion"
+        android:layout_width="220dp"
+        android:layout_height="185dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/baloo"
-        android:text="Precio: S/"
-        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/baloo_bhai_2_semibold"
+        android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombrePlato" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPrecioTitle" />
 
     <TextView
         android:id="@+id/tvPrecio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/baloo"
         android:hint="00.00"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tvPrecioTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombrePlato" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPlatoInfo" />
 
     <TextView
-        android:id="@+id/tvDescripcion"
-        android:layout_width="220dp"
-        android:layout_height="185dp"
+        android:id="@+id/tvPrecioTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/baloo_bhai_2_semibold"
-        android:text="TextView"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/baloo"
+        android:text="Precio: S/"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrecioTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPlatoInfo" />
 
     <Button
         android:id="@+id/btn_platosinfo_editar"
