@@ -81,20 +81,25 @@ public class ReporteActivity extends AppCompatActivity implements NavigationView
             document.add(title);
 
             // Crear tabla para mostrar las comidas
-            Table table = new Table(4); // Cuatro columnas para id, nombre, precio y descripción
+            Table table = new Table(5); // Cuatro columnas para id, nombre, precio y descripción
 
             // Agregar encabezados de columna
             table.addHeaderCell("ID");
             table.addHeaderCell("Nombre");
             table.addHeaderCell("Precio");
             table.addHeaderCell("Descripción");
+            table.addHeaderCell("Total");
 
             // Agregar filas de datos de comidas
             for (Plato plato : listaPlatos) {
+
+                double current_total = plato.getPrecio() * 2;
+
                 table.addCell(String.valueOf(plato.getId()));
                 table.addCell(plato.getNombre());
                 table.addCell(String.valueOf(plato.getPrecio()));
                 table.addCell(plato.getDescripcion());
+                table.addCell(String.valueOf(current_total));
             }
 
             // Agregar tabla al documento

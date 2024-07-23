@@ -23,8 +23,8 @@
         android:id="@+id/imageViewPlatoInfo"
         android:layout_width="126dp"
         android:layout_height="126dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_platosedit_platos" />
@@ -46,11 +46,12 @@
         android:id="@+id/etProductoEditarNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
         android:hint="Nombre de Plato"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_platosedit_platos" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPlatoInfo" />
 
     <EditText
         android:id="@+id/etProductoEditarPrecio"
@@ -92,8 +93,8 @@
         android:id="@+id/btnActualizarProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/btn_background_1"
         android:fontFamily="@font/baloo_bhai_2_semibold"
         android:text="Actualizar Producto"
